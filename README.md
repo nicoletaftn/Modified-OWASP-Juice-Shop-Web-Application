@@ -20,7 +20,7 @@ These are the kinds of things that correlate production with an internal subdoma
 - **CSP in `index.html`** — `connect-src` still allows `http://dev.juice-shop:3000`, with a TODO comment that was never acted on.
 - **CORS in `server.ts`** — `http://dev.juice-shop:3000` remains on the explicit allowlist after internal testing.
 - **Config & API** — `devEnvironmentUrl` in `config/default.yml` is returned from `GET /rest/admin/application-configuration`.
-- `**security.txt`** — the `canonical` field points at `http://dev.juice-shop:3000/.well-known/security.txt`.
+- **`security.txt`** — the `canonical` field points at `http://dev.juice-shop:3000/.well-known/security.txt`.
 - **Site footer** — a “Development site” link still shows the full URL (another staging leftover).
 
 Several of these are marked with TODOs to remove before go-live; in this lab they were simply never removed.
