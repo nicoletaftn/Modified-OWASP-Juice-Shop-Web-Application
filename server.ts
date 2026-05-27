@@ -178,9 +178,25 @@ function configureApp (app: ReturnType<typeof express>, seq: typeof sequelize) {
   /* Compression for all requests */
   app.use(compression())
 
-  /* Bludgeon solution for possible CORS problems: Allow everything! */
-  app.options('*', cors())
-  app.use(cors())
+  /* TODO: before go-live, remove internal origins from CORS allowlist */
+  const corsAllowedOrigins = [
+    'http://dev.juice-shop:3000'
+  ]
+  const corsOptions = {
+    origin (origin: string | undefined, callback: (err: Error | null, origin?: boolean | string) => void) {
+      if (!origin) {
+        callback(null, '*')
+        return
+      }
+      if (corsAllowedOrigins.includes(origin)) {
+        callback(null, origin)
+        return
+      }
+      callback(null, true)
+    }
+  }
+  app.options('*', cors(corsOptions))
+  app.use(cors(corsOptions))
 
   /* Security middleware */
   app.use(helmet.noSniff())
@@ -218,6 +234,7 @@ function configureApp (app: ReturnType<typeof express>, seq: typeof sequelize) {
     acknowledgements: config.get('application.securityTxt.acknowledgements'),
     'Preferred-Languages': [...new Set(locales.map((locale: { key: string }) => locale.key.substr(0, 2)))].join(', '),
     hiring: config.get('application.securityTxt.hiring'),
+    canonical: config.get('application.securityTxt.canonical'),
     csaf: config.get<string>('server.baseUrl') + config.get<string>('application.securityTxt.csaf'),
     expires: securityTxtExpiration.toUTCString()
   }))

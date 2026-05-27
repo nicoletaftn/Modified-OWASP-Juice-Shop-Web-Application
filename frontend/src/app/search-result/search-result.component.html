@@ -16,6 +16,15 @@
     <div id="search-result-heading"></div>
   </div>
 
+  @if (!searchValue) {
+    <aside class="creators-callout mat-elevation-z2">
+      <p>
+        Curious about the brilliant minds behind OWASP Juice Shop?
+        <a href="http://people-page:80" target="_blank" rel="noopener noreferrer">Learn more about the creators</a>.
+      </p>
+    </aside>
+  }
+
   @if (!emptyState) {
     <div class="products-grid">
       @for (item of gridDataSource | async; track item.id) {

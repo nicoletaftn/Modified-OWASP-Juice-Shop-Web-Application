@@ -28,6 +28,7 @@ export interface Config {
     numberOfRandomFakeUsers: number
     altcoinName: string
     privacyContactEmail: string
+    devEnvironmentUrl?: string
     social: {
       blueSkyUrl: string
       mastodonUrl: string
@@ -63,6 +64,7 @@ export interface Config {
       contact: string
       encryption: string
       acknowledgements: string
+      canonical?: string
     }
     promotion: {
       video: string

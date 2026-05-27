@@ -14,6 +14,7 @@ application:
   numberOfRandomFakeUsers: 0
   altcoinName: Juicycoin
   privacyContactEmail: donotreply@owasp-juice.shop
+  devEnvironmentUrl: 'http://dev.juice-shop:3000'
   customMetricsPrefix: juiceshop
   chatBot:
     name: 'Juicy the Smart Assistant'
@@ -54,6 +55,7 @@ application:
     encryption: 'https://keybase.io/bkimminich/pgp_keys.asc?fingerprint=19c01cb7157e4645e9e2c863062a85a8cbfbdcda'
     acknowledgements: '/#/score-board'
     hiring: '/#/jobs'
+    canonical: 'http://dev.juice-shop:3000/.well-known/security.txt'
     csaf: '/.well-known/csaf/provider-metadata.json' # scheme,host,port taken from baseUrl
   promotion:
     video: owasp_promo.mp4

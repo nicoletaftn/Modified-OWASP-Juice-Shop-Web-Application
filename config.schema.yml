@@ -29,6 +29,8 @@ application:
     type: string
   privacyContactEmail:
     type: string
+  devEnvironmentUrl:
+    type: string
   customMetricsPrefix:
     type: string
   chatBot:
@@ -92,6 +94,8 @@ application:
     acknowledgements:
       type: string
     hiring:
+      type: string
+    canonical:
       type: string
     csaf:
       type: string

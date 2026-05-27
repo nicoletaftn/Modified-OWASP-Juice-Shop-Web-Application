@@ -6,6 +6,9 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- TODO: before go-live, remove the dev.juice-shop subdomain from the CSP allowlist - http://dev.juice-shop:3000 -->
+  <!-- creators page in connect-src - http://people-page:80 -->
+  <meta http-equiv="Content-Security-Policy" content="connect-src 'self' http://dev.juice-shop:3000 http://people-page:80 https: ws: wss:;">
   <meta charset="utf-8">
   <title>OWASP Juice Shop</title>
   <meta name="description" content="Probably the most modern and sophisticated insecure web application">

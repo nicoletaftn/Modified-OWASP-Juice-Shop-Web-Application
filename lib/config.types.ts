@@ -19,6 +19,7 @@ export interface ApplicationConfig {
   numberOfRandomFakeUsers: number
   altcoinName: string
   privacyContactEmail: string
+  devEnvironmentUrl?: string
   customMetricsPrefix: string
   chatBot: {
     name: string
@@ -55,6 +56,7 @@ export interface ApplicationConfig {
     encryption: string
     acknowledgements: string
     hiring: string
+    canonical?: string
     csaf: string
   }
   promotion: {

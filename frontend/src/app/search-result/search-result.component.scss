@@ -20,6 +20,21 @@
 
 }
 
+.creators-callout {
+  background: var(--mat-sys-surface-container-high);
+  border-left: 4px solid var(--theme-accent);
+  margin-bottom: $space-m;
+  padding: $space-m $space-ml;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    font-weight: 600;
+  }
+}
+
 .product {
   display: flex;
   flex-direction: column;
